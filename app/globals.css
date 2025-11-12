@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary-1: #245127;
+  --color-secondary-1: #fcf055;
+  --color-secondary-2: #797b78;
+  /* --font-inter: var(--font-inter);
+  --font-poppins: var(--font-poppins);
+  --font-ojuju: var(--font-ojuju);
+  --font-switzer: var(--font-switzer); */
+  --breakpoint-*: initial;
+  --breakpoint-2xl: 2300px;
+  --breakpoint-xl: 1300px;
+  --breakpoint-xlg: 1200px;
+  --breakpoint-lg: 1000px;
+  --breakpoint-xmd: 900px;
+  --breakpoint-md: 800px;
+  --breakpoint-smd: 700px;
+  --breakpoint-sm: 600px;
+  --breakpoint-ssm: 500px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .bg-work {
+    background-image: url("/assets/bgwork.mp4");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  *::before,
+  *::after,
+  * {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    box-sizing: border-box;
+    /* 1rem = 24px */
+    font-size: 150%;
+    scroll-behavior: smooth !important;
+  }
+
+  @media screen and (max-width: 3000px) {
+    html {
+      /* 1rem = 16px */
+      font-size: 100%;
+    }
+  }
+
+  @media screen and (max-width: 2000px) {
+    html {
+      /* 1rem = 14px */
+      font-size: 87.5%;
+    }
+  }
+
+  @media screen and (max-width: 1800px) {
+    html {
+      /* 1rem = 12px */
+      font-size: 75%;
+    }
+  }
+
+  @media screen and (max-width: 1600px) {
+    html {
+      /* 1rem = 10px */
+      font-size: 62.5%;
+    }
+  }
+
+  /* @media screen and (max-width: 1100px) {
+    html {
+      font-size: 56.25%;
+    }
+  } */
+
+  /* @media screen and (max-width: 400px) {
+    html {
+      font-size: 50%;
+    }
+  } */
+
+  body {
+    font-size: 1.6rem;
+    background: #000;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  textarea,
+  input {
+    font-size: 16px !important;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    /* Firefox */
+    -moz-appearance: textfield;
+
+    /* Standard */
+    appearance: textfield;
+
+    /* Webkit browsers (Chrome, Safari, newer Edge) */
+    -webkit-appearance: textfield;
+  }
 }
